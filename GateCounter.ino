@@ -15,23 +15,23 @@ void setup()
 void loop()
 {
   float ur1, ur2;
-  float dit1, dit2;
+  float dit1=0, dit2=0;
   float gate = 150;
   
-  //to clear out the trigger pins
+  //to reset the trigger pins
   digitalWrite(tg1, LOW);
   delayMicroseconds(2);
   digitalWrite(tg2, LOW);
   delayMicroseconds(2); 
   
-  // entering sheep
+  // movement into the gate
   digitalWrite(tg1, HIGH);
   delayMicroseconds(10);
   digitalWrite(tg1, LOW);  
   ur1 = pulseIn(ech1, HIGH);  
   dit1 = 0.034*(ur1/2);
   
-  // exiting sheep
+  // movement out of the gate
   digitalWrite(tg2, HIGH);
   delayMicroseconds(10);
   digitalWrite(tg2, LOW);  
